@@ -1,0 +1,94 @@
+.navbar
+  .navbar-inner
+    .left
+      a.back.link(href='#')
+        i.icon.icon-back-white.icon-back
+        span Back
+    .right  
+      .detailFavbox
+        -if(post)
+          .favbox
+            a.right.favboxa(data-id="#{post.id}",data-isFav="#{isFav}",data-img="#{post.gallery}")
+             |                  
+             -if(isFav==true)
+               i.fa.fa-lg.fa-heart(style="color:#ff5757")
+             -else
+               i.fa.fa-lg.fa-heart(style="color:rgba(255, 255, 255, 0.35)")
+               
+.pages
+  .page.navbar-fixed.no-toolbar.no-tabbar(data-page='postDetail')          
+    .page-content
+      -if(post)
+        input#itemId(type="hidden",value='#{post.id}')
+        .list-block.cards-list
+          ul
+           li.card.ks-card-header-pic(data-fbId='#{fbId}')
+             .card-header.color-white.no-border.img-cover(style='background-image: url(#{post.gallery})', data-hash='1', title=post.title)       
+             .card-content
+              .card-content-inner
+                span.post-title.bold #{post.title}  
+                //- span.post-price.bold $#{post.price}
+
+                //- span
+                //-  .post-itemname.bold #{post.itemname}
+
+                //- span
+                //-  .post-content.bold #{post.content ||'no description now.'}
+              .list-block
+                ul  
+                  //- ------------------ facebook
+                  li
+                    a.item-link.item-content.external.fbShare()
+                      .item-media.title-items
+                        img(src='/img/facebook-32x32.png', alt='facebook', style="height: 32px;")
+                      .item-inner
+                        .item-title.bold Share to Facebook
+                        
+                  //- ------------------ line
+                  li
+                    a.item-link.item-content.external.lineIt(href="http://line.me/R/msg/text/")
+                      .item-media.title-items
+                        img(src='/img/linebutton_20x20_en.png', alt='line', style="height: 32px;")
+                      .item-inner
+                        .item-title.bold Share with LINE friends
+                        
+                  //- ------------------ chat
+                  li
+                    a.item-link.item-content.chat(href="/post/#{post.id}/chat" data-ignore-cache="true")
+                      .item-media.title-items
+                        img(src='/img/chat＿60x60.png', alt='chat', style="height: 32px;")
+                      .item-inner
+                        .item-title.bold Talk to Owner
+                        
+                  //- ------------------ phone
+                  -if(post.phone)
+                    li
+                      a.item-link.item-content(href='#')
+                        .item-media.title-items
+                          i.icon.icon-form-tel
+                        .item-inner
+                          .item-title.bold #{'no phone number now.'}
+                          
+                  //- ------------------ email
+                  //- -if(post.email)
+                  //-   li
+                  //-     a.item-content.external(href='mailto:#{post.email}')
+                  //-       .item-media.email-user
+                  //-         i.icon.icon-form-email
+                  //-       .item-inner
+                  //-         .item-title.bold.black #{post.email}
+             .card-footer
+              .mapWrapper.center
+                a.external(href="https://www.google.com.tw/maps/place/"+post.latitude+","+post.longitude)
+                  -var staticMap = "http://maps.google.com/maps/api/staticmap?zoom=18&size=350x180&sensor=ture&maptype=roadmap&markers="
+                  -var link = staticMap+post.latitude+","+post.longitude;
+                  img.staticMap(src=link, data-hash='1', alt='location')
+                  
+          // facebook commitboard
+          //- .card
+          //-   .card-content 
+          //-     .list-block.media-list
+          //-       .item-content
+          //-         .item-inner
+          //-           #fb-root
+          //-           .fb-comments.external(data-width="400", data-numposts="5")       

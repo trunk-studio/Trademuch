@@ -1,0 +1,15 @@
+.navbar
+  .navbar-inner
+    .left
+      a.back.link(href='#')
+        i.icon.icon-back-white.icon-back
+        span Back
+    .center.sliding 請選擇一個分類
+    
+.pages
+  .page.navbar-fixed.no-toolbar.no-tabbar(data-page='createCategory')          
+    .page-content.hide-bars-on-scroll
+          
+      form#createCategoryChoose
+        include ../includes/category.jade
+      

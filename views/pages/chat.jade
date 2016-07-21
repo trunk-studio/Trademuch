@@ -1,0 +1,52 @@
+.navbar
+  .navbar-inner
+    .left
+      a.link.back(href='#')
+        i.icon.icon-back-white.icon-back
+        span Back
+        
+    .center.sliding 聊天
+        
+.pages  
+  .page.navbar-fixed.toolbar-fixed(data-page='chat')
+  
+    .toolbar.messagebar
+      .toolbar-inner
+        textarea.text-left(placeholder='Message', maxlength=256)
+        a.link.send(href='#') Send  
+        
+    .page-content.messages-content.keep-bars-on-scroll.keep-navbar-on-scroll.keep-toolbar-on-scroll
+      .messages
+        -if(history)
+          -if(history.empty!=true)
+            -var second=false;
+            -var tDate="";
+            each chat,index in history.result 
+              -console.log("!!!!!!!!!!!! chat.jade load index=>",index);
+              
+              -if( index>0 ) tDate = history.result[index-1].date
+                -if( tDate!=chat.date ) second=true;
+                -else second=false;
+              
+              -if( chat.user.id == user.id )
+                -if( index==0 || second )
+                  .messages-date
+                    | #{chat.date} ,
+                    span #{chat.time}
+                .message.message-sent
+                  .message-text(data-date="#{chat.date}",data-time="#{chat.time}") #{chat.content}
+                  .message-avatar(style='background-image:url("//graph.facebook.com/'+ chat.user.fbId + '/picture?type=small")')
+              -else   
+                -if( index==0 || second )
+                  .messages-date
+                    | #{chat.date} ,
+                    span #{chat.time}
+                .message.message-received
+                  .message-name #{chat.user.username}
+                  .message-text(data-date="#{chat.date}",data-time="#{chat.time}") #{chat.content}
+                  .message-avatar(style='background-image:url("//graph.facebook.com/'+ chat.user.fbId + '/picture?type=small")')
+
+    .info 
+      -if(user.fbId)
+        input#userFBId(type="hidden" value="#{user.fbId}")
+      input#userId(type="hidden" value="#{user.id}")

@@ -1,0 +1,11 @@
+-console.log(categorys);
+each category,index in categorys
+  .row.no-gutter
+    .col-100.tablet-50.hobbyItem
+      span
+        | #{categorys[index].title}
+      input(type='checkbox', name='hobby', value=categorys[index].id, style="display: none;")
+      //- img.category.lazy.lazy-fadeIn(data-src=categorys[index].pic, style="height:139px;")
+      img.category.lazy(data-src=categorys[index].pic, style="height:139px;")
+      img.checked(src='/img/checked.png' style="display: none;")
+  

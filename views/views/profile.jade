@@ -1,0 +1,15 @@
+#profileView.view.view-profile.tab(data-page='profile')
+
+  include ../includes/navbar.jade
+  
+  -if(loginState)
+    
+    .pages.navbar-through
+      .page(data-page='profile')
+        .page-content
+        
+  -else
+    include ../includes/noLogin.jade
+    
+script.
+  var loginState = !{loginState} || false;      

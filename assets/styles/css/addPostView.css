@@ -1,0 +1,106 @@
+/* fileUpload-input */
+div.fileUpload-input {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 1px;
+}
+div.fileUpload-input > .lightbox {
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  overflow: hidden;
+}
+div.fileUpload-input > .lightbox > .preview {
+  width: auto;
+  max-height: 250px;
+  /*border-color: rgba(69, 69, 69, 0.89);*/
+  /*border-width: 1px;*/
+  /*border-style: outset;*/
+  margin: auto;
+  padding-bottom: 10px;
+  display: block !important;
+}
+div.fileUpload-btn {
+  top: -9px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+}
+div.fileUpload-btn > span {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+div.fileUpload-btn > input.uploadBtn, input.submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+input#uploadFile {
+  margin-bottom: 10px;
+  text-align: center;
+  border-width: 0px;
+  width: 1em;
+}
+
+/*.category {
+  margin-top: 35px;
+}*/
+
+.quickDatePickArea{
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.quickDatePickArea .button-round:link {
+  text-decoration: none;
+}
+.quickDatePickArea .button-round:hover {
+  background-color: #007aff;
+  text-decoration: none;
+  color: white;
+}
+.quickDatePickArea .button-round:visited {
+  /*background-color: #007aff;*/
+  text-decoration: none;
+  /*color: white;*/
+}
+#calendar-postPeriod{
+  margin-bottom: 10px;
+}
+
+#storyImageUpload>.list-block {
+  margin-bottom: 0px;
+}
+
+#createDetailChoose>.list-block {
+  margin-top: 0px;
+}
+
+canvas#viewport {
+  margin: auto;
+  display: none !important;
+}

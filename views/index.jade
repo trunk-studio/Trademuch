@@ -1,0 +1,39 @@
+
+doctype html(lang='en-US')
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  // safira web app configs
+  meta(name='viewport', content='width = device-width, initial-scale = 1.0, minimum-scale = 1, maximum-scale = 1, user-scalable = no')
+  meta(name='apple-mobile-web-app-capable', content='yes')
+  meta(name='mobile-web-app-capable', content='yes')
+  meta(name='apple-mobile-web-app-status-bar-style', content='black')
+  meta(name='apple-mobile-web-app-title', content='TradeMuch')
+  // iPhone
+  link(href='/img/apple-touch-icon-57x57.png', sizes='57x57', rel='apple-touch-icon')
+  link(href='/img/apple-touch-icon-114x114.png', sizes='114x114', rel='apple-touch-icon')
+  // iPad 
+  link(href='/img/apple-touch-icon-72x72.png', sizes='72x72', rel='apple-touch-icon')
+  link(href='/img/apple-touch-icon-144x144.png', sizes='144x144', rel='apple-touch-icon')    
+  //- splash
+  link(rel="apple-touch-startup-image", href="/img/splash.png")
+  
+  title TradeMuch
+  
+  link(rel="stylesheet", href="/styles/css/index.css")
+  
+body#page-top.map-fullscreen.page-homepage.navigation-off-canvas()
+  #splash
+    //- img(src='/img/splashLogo.png', alt='splashLogo')
+    
+//- script(type='text/javascript', src='/js/map/jquery-2.1.0.min.js')
+script.  
+  window.setTimeout(function() {
+    var splash = document.getElementById('splash');
+    splash.className += 'animated fadeOut';
+    window.setTimeout(function() {
+      window.location.replace("/app");
+        //- $('#splash').hide();
+    },100);
+  }, 100);
+        

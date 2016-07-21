@@ -1,0 +1,11 @@
+.navbar
+  .navbar-inner
+    .wrapper
+      a.left.external.logo(href='/app')
+        img(src='/img/logo.png', alt='logo') 
+    .wrapper
+      -console.log("loginState=>",loginState);
+      -if(!loginState)
+        a.right.top.external( target="_top" href='/rest/auth/facebook')
+          i.fa.fa-facebook-square
+          //- img.action(src='/img/facebook.png', alt='facebook', style="height: 20px;")

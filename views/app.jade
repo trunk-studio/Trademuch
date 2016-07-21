@@ -1,0 +1,22 @@
+extends ./layout
+
+block body
+  
+  //- screen elements
+  include ./includes/statusbar.jade
+  include ./includes/panel.jade
+  
+  //- app elements 
+  include ./includes/splash.jade
+  include ./includes/backTop.jade
+  
+  .views.toolbar-through.tabs
+  
+    include ./views/main.jade 
+    include ./views/search.jade
+    include ./views/favorite.jade
+    include ./views/profile.jade
+    include ./views/addPost.jade
+      
+    include ./includes/toolbar.jade
+  

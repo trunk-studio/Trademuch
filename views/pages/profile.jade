@@ -1,0 +1,59 @@
+.page.no-navbar-by-scroll.no-tabbar-by-scroll(data-page='profile')          
+  .page-content.hide-bars-on-scroll
+    -console.log("!!!!!!!!!!!!!!profile",profile);
+    .card
+      .card-content
+        .list-block.media-list
+          ul
+            li.item-content.profile-card
+              .item-media.profile-picture
+                -if(profile.fbId!=0)
+                  img(src='//graph.facebook.com/' + profile.fbId + '/picture?type=large', alt='avatar' height="100px")
+                -else
+                  img(src='/img/human.png', alt='avatar' width="100")
+              .item-inner
+                .item-title-row
+                  .item-title.profile-name #{profile.name}
+                .item-subtitle
+                  .row.center
+                    .col-33 Like
+                    .col-33 Post
+                    .col-33 Activity
+                  .row.center
+                    .col-33 #{profile.favCount}
+                    .col-33 #{profile.postCount}
+                    .col-33 #{profile.activity}
+                    
+    .card(style="margin-top:-50px;")
+      .card-content 
+      -if(profile.postCount != 0)
+        .list-block.media-list
+          ul
+            -var i=0
+            each post in profile.allUserPost
+              -i++
+              -console.log(post)
+              li.swipeout(data-id=post.id)
+                .swipeout-content
+                  .item-content.prodList
+                    .item-media
+                      -if(i<=5)
+                        .img-square(style='background-image: url("#{post.coverImage}")')
+                      -else
+                        .img-square.lazy(data-background= post.coverImage)
+                    .item-inner
+                      .item-title-row
+                        .item-title 
+                          a.link.item(href='/post/f7/#{post.id}') #{post.title}
+                        -if(post.lastChat)
+                          span.badge.color-yellow ！
+                      .item-text 
+                        | #{post.lastChat}
+                    //-  .item-subtitle NT$#{post.price}
+                .swipeout-actions-right
+                  a.bg-pink.deletePost(href='#', data-id='#{post.id}', data-img="#{post.coverImage}")
+                    img(src='/img/deletefav.png', alt='deleteFav', style="height: 30px;")
+      -else
+        .noPostItem     
+          img(src='/img/pc-man.png', alt='pc-man')        
+          p there is nothing... 

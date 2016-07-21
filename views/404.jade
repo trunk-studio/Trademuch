@@ -1,0 +1,20 @@
+extends ./layout
+
+block body
+
+  .navbar
+    .navbar-inner
+      .left
+        a.back.link(href='#', onClick="window.history.back();")
+          i.icon.icon-back-white.icon-back
+          span Back
+  .pages
+    #registerFinish.view.view-main.page(data-page='404')
+      .page-content
+        .content-block.nologin
+          #greeting
+            h1 Oooops!
+              h2
+                p We can't seems to find the page you're looking for. :(
+                a.button.external.active(target="_top", href="#" , onClick="window.history.back();")
+                  span Back

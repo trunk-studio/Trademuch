@@ -1,0 +1,20 @@
+extends ./layout
+
+block body
+
+  .navbar
+    .navbar-inner
+      .left
+        a.back.link(href='#')
+          i.icon.icon-back-white.icon-back
+          span Back
+  .pages
+    #registerFinish.view.view-main.page(data-page='500')
+      .page-content
+        .content-block.nologin
+          #greeting
+            h1 Ahhhhhhhhh!
+              h2
+                p Seems like there's something wrong between you and TradeMuch, please click the button below to retry again. 
+                a.button.active(target="_top" href='/app')
+                  span Login

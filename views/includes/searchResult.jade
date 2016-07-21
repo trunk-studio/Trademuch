@@ -1,0 +1,38 @@
+//f7 search-result callback
+script(type='text/template7', id="searchResult").
+  {{#if this.items}}
+    {{#if this.items.length>0}}
+      {{#each this.items}}
+        <li class="swipeout" data-id={{id}}>
+          <div class="swipeout-content">
+            <div class="item-content prodList">
+              <div class="item-media">
+                <img data-src={{gallery[0]}} width="80" class="lazy lazy-fadeIn" style="overflow: hidden;"/>
+              </div>
+              <div class="item-inner">
+                <div class="item-title-row">
+                  <div class="item-title">
+                    <a class="link" data-ignore-cache="true" href='/post/{{id}}'>{{title}}</a>
+                  </div>
+                </div>
+                <div class="item-subtitle">NT${{price}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="swipeout-actions-right">
+            <a href="#" data-img="{{gallery[0]}}" data-id="{{id}}" class="action1 bg-blue like notif-message">
+              <img src="/img/addFav.png" alt="addFav" style="height: 30px;">
+            </a>
+          </div>
+        </li>
+      {{/each}}
+    {{else}} 
+      <div class="pc-man">
+        <img src="/img/pc-man.png" alt="pc-man">
+        <p> there is nothing... </p>
+        <div class="no-post">
+         <a href="/post/create/Category" class="button button-square suggestClicked">asking someone for this item!</a>
+        </div> 
+      </div>
+    {{/if}}
+  {{/if}}

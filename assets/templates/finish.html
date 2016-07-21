@@ -1,0 +1,45 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <!-- <a href="/app/user/hobby?hasMail=true" data-force="true" class="link back"> -->
+      <a class="link back" onclick="window.history.back();">
+        <i class="i icon icon-back-white icon-back" style="transform: translate3d(0px, 0px, 0px);"></i>
+        <span>Back</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div id="registerFinish" data-page="finish" class="page no-toolbar no-tabbar">
+    <div class="page-content">
+      <div class="content-block">
+        <div id="greeting">
+          <h2>Welcome to TradeMuch.</h1>
+            <p>Share everything around your nearby locations</p>
+              <form id="singUp-form" class="ajax-submit" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-input">
+                          <select id="regionSelect">
+                          </select>
+                          <input type="hidden" name="addr">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              {{#each this.hobby}}
+              <input type="hidden" class="hobby" name="hobby[{{@index}}]" value={ {this}}> {{/each}}
+              <div class="list-block">
+                <input id="submit" type="submit" class="button  active" value="Start" style="margin:0 auto;height:50px;">
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

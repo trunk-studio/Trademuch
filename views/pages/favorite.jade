@@ -1,0 +1,67 @@
+.page.toolbar-through(data-page='favorite')          
+  .page-content
+  
+    -if(favorites && favorites.length > 0)
+      .card
+        .card-header You like !!
+        .card-content
+        .list-block.media-list
+          ul#fav-result
+            -i=0
+            each favorite in favorites
+              -i++
+              li.swipeout(data-id=favorite.id)
+                  .swipeout-content
+                    .item-content.prodList
+                      .item-media
+                        //- img(src=post.gallery[0], width='80')
+                        -if(i<=5)
+                          .img-square(style='background-image: url("#{favorite.coverImage}")')
+                        -else
+                          .img-square.lazy(data-background= favorite.coverImage)
+                      .item-inner
+                        .item-title-row
+                          .item-title 
+                            a.item.link(href='#', data-id='#{favorite.id}') #{favorite.title}
+                        //- .item-subtitle #{favorite.Item.itemname}
+                  .swipeout-actions-right
+                    a.bg-pink.deleteFav.notif-message.swipeout-delete(href='#', data-id='#{favorite.id}', data-img=favorite.coverImage)
+                      img(src='/img/deletefav.png', alt='deletefav', style="height: 30px;")
+    -else  
+      -if(loginState)
+       .card
+         .card-content 
+           .list-block.media-list
+             ul
+               li.item-content
+                 .item-media
+                   img(src='/img/blockHeart.png', width='80')
+                 .item-inner
+                   .item-title-row.text-alert
+                     .item-title Opps..
+                   .item-subtitle You have no favorite item yet
+    .card
+      .card-header You may like...
+      .card-content 
+        .list-block.media-list
+          ul
+            //- each post in allPosts
+            each val in [1, 2, 3]
+              - var random = Math.floor(Math.random() * 10) % allPosts.length
+              -if(allPosts.length != 0)
+                li.swipeout(data-id=allPosts[random].id)
+                    .swipeout-content
+                      .item-content.prodList
+                        .item-media
+                          //- img(src=post.gallery[0], width='80')
+                          .img-square(style='background-image: url("#{allPosts[random].gallery[0]}")')
+                          //- img(src=allPosts[random].gallery[0], width='80')
+                        .item-inner
+                          .item-title-row
+                            .item-title  
+                              a.item.link(href='#', data-id='#{allPosts[random].id}') #{allPosts[random].title}
+                          //- .item-subtitle NT$#{allPosts[random].price}
+                    .swipeout-actions-right
+                      a.bg-blue.notif-message.addFav(href='#', data-id='#{allPosts[random].id}', data-img=allPosts[random].gallery[0])
+                        img(src='/img/addfav.png', alt='addFav', style="height: 30px;")
+              -allPosts.splice(random, 1)

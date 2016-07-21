@@ -1,0 +1,15 @@
+#favoriteView.view.view-favorite.tab(data-page='favorite')
+
+  include ../includes/navbar.jade
+  .pages.navbar-through
+    
+    -if(loginState)
+      .page(data-page='favorite')
+        .page-content
+          
+    -else
+      include ../includes/noLogin.jade
+      
+script.
+  var loginState = !{loginState} || false;
+    

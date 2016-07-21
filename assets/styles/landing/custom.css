@@ -1,0 +1,54 @@
+/* 區塊背景 */
+
+
+
+#promo1 {
+  margin-top: 0;
+  margin-bottom: 96px;
+  background: url("/img/mockup-2.jpg") 80% 55% no-repeat white;
+  height: 730px;
+  background-size: 160%;
+}
+#promo2 {
+  margin-top: -95px;
+  margin-bottom: 96px;
+  background: url("/img/mockup-1.jpg") 100% 55% no-repeat white;
+  height: 730px;
+  background-size: 120%;
+}
+#promo3 {
+  margin-top: -95px;
+  margin-bottom: 96px;
+  background: url("/img/mockup-6.jpg") 90% 45% no-repeat white;
+  height: 730px;
+  background-size: 120%;
+}
+
+/* 文字 */
+
+#promoDesc {
+  width: 50%;
+  float: right;
+  color: white;
+}
+#promoDesc:first-child {
+  margin-top: 15%;
+}
+#promoDesc > h1 {
+  width: 85%;
+  text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 5px black, 0px 0px 15px black;
+  font-weight: 700;
+}
+#promoDesc > h1 > p {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 24px;
+  float: left;
+  padding-top: 40px;
+  text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 5px black, 0px 0px 5px black;
+  font-weight: 100;
+}
+#promoDesc > h1 > p > a {
+  text-shadow: 0px 0px 2px #01579B, 0px 0px 2px #01579B, 0px 0px 2px #01579B, 0px 0px 2px #01579B, 0px 0px 5px black;
+  font-weight: 100;
+}

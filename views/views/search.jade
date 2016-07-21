@@ -1,0 +1,67 @@
+#searchView.view.view-search.tab(data-page='search')
+  include ../includes/navbar.jade
+  include ../includes/searchResult.jade
+
+  .pages.navbar-through
+    .page(data-page='search')
+      .page-content     
+        
+        // Search bar overlay
+        .searchbar-overlay
+      
+        .searchbar-wrapper
+          form#formSearch.searchbar.searchbar-init(data-search-list='.list-block-search', data-search-in='.item-title')
+            // Search bar
+            .searchbar-input
+                -if(keyword)
+                  input.i18n(type='search', data-i18n='[placeholder]global.search', value="#{keyword}")
+                -else
+                  input.i18n(type='search', data-i18n='[placeholder]global.search')
+                a.searchbar-clear(href='#')
+              a.searchbar-cancel.i18n(href='#', data-i18n='global.cancel') cancel
+          
+          .row.categories
+            a.button.button-round(href='#nike', data-keyword='nike') Nike
+            a.button.button-round(href='#iphone', data-keyword='iphone') IPhone
+            a.button.button-round(href='#test', data-keyword='外套') 外套
+            a.button.button-round.suggestClicked(href='#all', data-keyword='all') All
+      
+        .searchResult-wrapper
+          .card
+            .card-content
+              .list-block.list-block.list-block-search.searchbar-found
+                ul#search-result
+                  each item in items
+                    li.swipeout(data-id=item.id, data-isFav="#{item.isFav}")
+                      .swipeout-content
+                        .item-content.prodList
+                          .item-media
+                            //- img(src=item.gallery[0], width='80')
+                            .img-square.lazy(data-background= item.gallery[0])
+                            //img.lazy.lazy-fadeIn(data-src=, width='80', style="overflow: hidden;")
+                            //- img.lazy.lazy-fadeIn(data-src='http://lorempixel.com/80/60/technics/#{item.id % 9}', width='80')
+                          .item-inner
+                            .item-title-row
+                              .item-title
+                                //- a.link(href='/item/#{item.id}') #{item.title}
+                                a.item.link(href='#', data-id='#{item.id}') #{item.title}
+                            //- .item-subtitle NT$#{item.price}
+                      .swipeout-actions-right
+                        -if(!item.isFav)
+                          a.bg-blue.notif-message.addFav(href='#', data-id='#{item.id}', data-img=item.gallery[0]) 
+                            img(src='/img/addfav.png', alt='addFav', style="height: 30px;")
+                          a.bg-pink.notif-message.deleteFav.hide(href='#', data-id='#{item.id}', data-img=item.gallery[0])
+                            img(src='/img/deletefav.png', alt='deleteFav', style="height: 30px;")
+                        -else
+                          a.bg-blue.notif-message.addFav.hide(href='#', data-id='#{item.id}', data-img=item.gallery[0]) 
+                            img(src='/img/addfav.png', alt='addFav', style="height: 30px;")
+                          a.bg-pink.notif-message.deleteFav(href='#', data-id='#{item.id}', data-img=item.gallery[0])
+                            img(src='/img/deletefav.png', alt='deleteFav', style="height: 30px;")
+        
+              .content-block.searchbar-not-found
+                .content-block-inner.pc-man
+                  img(src='/img/pc-man.png', alt='pc-man')
+                  p  there is nothing... 
+                  .no-post
+                    a.button.button-square.suggestClicked(href='/post/create/Category') asking someone for this item!
+            

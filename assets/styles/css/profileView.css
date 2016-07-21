@@ -1,0 +1,96 @@
+/* ------------ profile page ------------*/
+
+#profileView .content-block {
+  overflow: hidden;
+}
+#profileView > .page-content {
+  margin-top: -60px;
+  margin-bottom: 60px;
+}
+
+/* ------------ picture ---------------- */
+
+.profile-card{
+  margin-bottom: 60px;
+  padding-left: 0px !important;
+}
+.profile-picture {
+  overflow: hidden;
+  border-radius: 60%;
+  width: 80px;
+  height: 80px;
+  margin-left: 10px
+}
+.profile-picture > img  {
+  /*padding-right: 5%;*/
+  /*float: right;*/
+  width: 80px;
+  height: 80px;
+}
+.profile-name {
+  font-size: 26px;
+  color: #01579b;
+  margin: 3px auto;
+}
+.profile-picture > .light-box {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 60%;
+}
+.profile-picture > .light-box > img {
+  width: auto;
+  height: 100%;
+}
+
+.noPostItem > img {
+  width: 35%;
+  padding: 6px;
+}
+
+.noPostItem {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.noPostItem > p{
+ text-align: center;
+ font-size: 18px;
+ font-weight: 900;
+ margin-bottom: 9px;
+ margin-top: auto;
+}
+
+/* ------------ detail ----------------- */
+
+.profile-detail {
+  text-align: center;
+  padding-top: 15px;
+  width: 80%;
+  float: left;
+}
+.profile-detail > span.name {
+  font-size: 26px;
+  color: #01579b;
+}
+.profile-detail > .datails {
+  /*font-size: 17px;*/
+}
+.profile-detail > .datails > .row {
+  font-size: 18px;
+  margin: 0;
+}
+.profile-detail > .datails > div span {
+  font-size: 17px;
+}
+
+/* ------------ description ------------ */
+
+.profile-description {
+  font-size: 14px;
+  height: 40px;
+  padding-left: 8%;
+  padding-top: 11px;
+  margin-top: 20px;
+}

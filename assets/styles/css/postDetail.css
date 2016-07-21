@@ -1,0 +1,52 @@
+/*
+.card-header > img {
+  vertical-align: middle;
+  height: 60vw;
+  margin-left: 8px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}*/
+
+.cards-list {
+  margin-top: 0px;
+}
+.card-content-inner > p {
+  margin-left: 10px;
+  font-size: 16px;
+}
+#postDetailF7 a.item-link.item-content > img {
+  height: 19px;
+  width: 19px;
+  margin-left: -35px;
+}
+.post-itemname.bold {
+  color: #ADADAD;
+  margin-top: 3px;
+  margin-left: 16px;
+}
+span.post-title.bold {
+  font-size: 25px;
+  margin-left: 9px;
+}
+span.post-price.bold {
+  font-size: 20px;
+  margin-left: 8px;
+}
+.post-content.bold {
+  padding-left: 16px;
+  color: #383838;
+}
+.item-media.title-items {
+  margin-left: -25px;
+}
+.item-media.email-user {
+  margin-left: -25px;
+}
+.imgWrapper {
+  max-width: 350px;
+  max-height: 350px;
+}
+.staticMap{
+  width: 100%;
+  height: auto;
+}

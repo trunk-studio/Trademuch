@@ -1,0 +1,19 @@
+.toolbar.toolbar-bottom.tabbar.toolbar-style
+  .toolbar-inner
+    a.mainView.tab-link(href='#mainView')
+      img(src='/img/map.png', alt='map')
+    |     
+    a.searchView.tab-link(href='#searchView')
+      img(src='/img/search.png', alt='search')
+    |           
+    -if(loginState)
+      //- a.addPostView.link(data-view="#addPostView")
+      a.addPostView.tab-link(href="#addPostView")
+        img(src='/img/add.png', alt='addPost')
+      |     
+      a.favoriteView.tab-link(href='#favoriteView')
+        img(src='/img/favorite.png', alt='favorite')
+      | 
+      a.profileView.tab-link(href='#profileView')
+        img(src='/img/login.png', alt='profile')
+        //- span.badge.bg-red 4

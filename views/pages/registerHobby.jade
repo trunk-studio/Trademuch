@@ -1,0 +1,20 @@
+.navbar
+  .navbar-inner
+    // We need cool sliding animation on title element, so we have additional "sliding" class
+    .left
+      a.external(href='/')
+        img(src='/img/logo.png', alt='logo', style="height: 45px;")
+    .right
+      -if(isHasMail == "true")
+        //- a#nextSetp(href='/templates/finish.html', data-context="", disabled) Done
+        a#nextSetp(data-context="", disabled) Done
+      -else
+        //- a#nextSetp(href='/templates/finishMail.html', data-context="", disabled) Done
+        a#nextSetp(data-context="", disabled) Done
+
+.pages
+  .page.no-toolbar.no-tabbar(data-page='registerHobby')
+    .page-content
+    
+      form#hobbySelect
+        include ../includes/category.jade

@@ -1,0 +1,94 @@
+//- link(rel='stylesheet', href='styles/css/createDetail.css', type='text/css')
+.navbar
+  .navbar-inner
+      .left
+        a.back.link(href='#')
+          i.icon.icon-back-white.icon-back
+          span Back
+      .right
+        a#finishStep(disabled) Done
+      
+.pages
+  .page.navbar-fixed(data-page='createDetail')
+    .page-content
+      .list-block
+        
+        .item-content
+          .item-inner
+            .item-input
+              .fileUpload-input
+                .lightbox
+                  img.preview(src="/img/gray.png")
+                .btn.btn-primary.fileUpload-btn
+                  span Pick a photo  
+                  input.uploadBtn(type='file',accept="image/*",name='image',capture)
+                .canvasWrapper(style="display:none")
+                  canvas#viewport
+            
+        .item-content
+          form#storyImageUpload
+            input(form='storyImageUpload',type='hidden',name='picBase64') 
+          form#createDetailChoose
+            .list-block.row.no-gutter
+              .col-90
+              .item-content.col-90(style={display: 'none'})
+                .item-media
+                  i.icon.icon-form-toggle(style='background-image: url("/img/input-icon/seeking.png");')
+                .item-inner
+                  .item-title.label.black Seeking?
+                  .item-input.center
+                    label.label-switch
+                      input.seeking(type='checkbox',name='seeking')
+                      .checkbox
+            
+              .item-content.col-90
+                .item-media
+                  i.icon.icon-form-comment(style='background-image: url("/img/input-icon/title.png");')
+                .item-inner
+                  .item-title.label.black Title
+                  .item-input
+                    input(type='text', name='title', placeholder='what is this?')
+            
+              .item-content.col-90(style="display:none")
+                .item-media
+                  i.icon.icon-form-comment(style='background-image: url("/img/input-icon/content.png");')
+                .item-inner
+                  .item-title.label.black Content
+                  .item-input
+                    textarea.resizable(placeholder='description', type='text', name='content')
+          
+              .item-content.col-90(style="display:none")
+                .item-media
+                  i.icon.icon-form-url(style='background-image: url("/img/input-icon/price.png");')
+                .item-inner
+                  .item-title.label.black Price
+                  .item-input.StoryPrice.center
+                    input(type='tel', pattern="\d*", name='price', placeholder='give a price', value='0', min="0")
+                
+                  //- 
+                  //- below inputs have been hidden 
+                  //- 
+                  .item-content(style="display:none")
+                    .item-inner
+                      .item-input
+                        input(type='hidden', name='item', placeholder="item type")
+                        
+                  .item-content(style="display:none")
+                    .item-inner
+                      .item-input
+                        .row.quickDatePickArea
+                          .col-auto
+                            a.button.button-round(href='', data-value='3-d') 3days
+                          .col-auto
+                            a.button.button-round(href='', data-value='1-w') 1week
+                          .col-auto
+                            a.button.button-round(href='', data-value='1-m') 1month
+                          .col-auto
+                            a.button.button-round(href='', data-value='pick') custom
+                        .row
+                          input(type='text', name='postPeriod', placeholder='posting period', id='calendar-postPeriod', readonly)
+                        .row.dateInput(style="display:none")
+                          .col-50
+                            input(type='date', name='postPeriodStart', placeholder='start', id='postPeriodStart')
+                          .col-50
+                            input(type='date', name='postPeriodEnd', placeholder='end', id='postPeriodStart')
